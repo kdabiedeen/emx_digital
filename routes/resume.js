@@ -42,8 +42,8 @@ router.get('/', function(req, res, next) {
     case "Puzzle":
       response = "Puzzle"
       break;
-    res.send(response)
   }
+  res.send(response)
 });
 
 module.exports = router;
