@@ -40,7 +40,7 @@ router.get('/', function(req, res, next) {
       response = "Jenny"
       break;
     case "Puzzle":
-      response = "Puzzle"
+      response = "ABCD\nA=><<\nB<=<<\nC>>=>\nD>><="
       break;
   }
   res.send(response)
