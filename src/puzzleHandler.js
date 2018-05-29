@@ -57,11 +57,13 @@ var puzzleHandler = function(input){
       indexOfEquals = i;
   }
 
+  //map to quickly get opposites
   var opposites = {}
   opposites['<'] = '>'
   opposites['>'] = '<'
   opposites['='] = '='
 
+  //build given row
   var givenRow = []
   for(var givenChars of collectGivenChars)
       givenRow.push(opposites[givenChars.c])
