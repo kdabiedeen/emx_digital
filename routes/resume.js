@@ -4,8 +4,7 @@ var router = express.Router();
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   var call_result = function(input){
-    var rows = input.split(/\r?\n/);
-    return rows.join(" ");
+    var rows = input.split(/\r?\n/).join(" ").slice(1).split(" ");
     var indexOfEquals = -1;
 
     var A = ['-', '-', '-', '-'];
