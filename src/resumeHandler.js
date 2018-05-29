@@ -38,7 +38,7 @@ var resumeHandler = function(urlParam){
       break;
     case "Puzzle":
       var puzzle = req.query.d;
-      response = puzzleHandler(puzzle);
+      //response = puzzleHandler(puzzle);
       response = "hi"
       break;
   }
