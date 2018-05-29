@@ -34,6 +34,8 @@ router.get('/', function(req, res, next) {
         indexOfEquals = i;
     }
 
+    return "Hello";
+
     opposites = {}
     opposites['<'] = '>'
     opposites['>'] = '<'
