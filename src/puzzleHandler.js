@@ -1,5 +1,7 @@
 var puzzleHandler = function(input){
-  input = input.substring(input.indexOf('ABCD') + 5, input.length)
+
+  return "hello";
+  input = input.substring(input.indexOf('ABCD') + 5, input.length);
   var rows = input.split(/\r?\n/).slice(0,4);
   for(var i = 0; i < rows; i++){
     rows[i] = rows[i].trim();
