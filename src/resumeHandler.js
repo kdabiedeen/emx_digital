@@ -33,7 +33,7 @@ var resumeHandler = function(urlParams){
       response = "https://drive.google.com/uc?export=download&id=0B9S6A62lL2pJVEp1ZEpnUkZ6TFozbl8ydFBBMktXVUJ0MVVr"
       break;
     case "Source":
-      response = "https://github.com/kdabiedeen/emx_digital"
+      response = "https://github.com/kdabiedeen/emx_digital/archive/master.zip"
       break;
     case "Referrer":
       response = "Jenny Gasparis (LinkedIn) "
