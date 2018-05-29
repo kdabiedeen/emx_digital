@@ -8,9 +8,8 @@ router.get('/', function(req, res, next) {
     for(var i = 0; i < rows; i++){
       rows[i] = rows[i].trim();
     }
-    return rows.join("***");
-    var indexOfEquals = -1;
 
+    var indexOfEquals = -1;
     var A = ['-', '-', '-', '-'];
     var B = ['-', '-', '-', '-'];
     var C = ['-', '-', '-', '-'];
