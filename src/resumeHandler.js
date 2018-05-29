@@ -3,11 +3,6 @@ var puzzleHandler = require('./puzzleHandler')
 var resumeHandler = function(urlParam){
   var response;
 
-  if(urlParam == "Ping")
-    return "OK"
-  else {
-    return urlParam;
-  }
   switch(urlParam){
     case "Ping":
       response = "OK";
@@ -44,8 +39,7 @@ var resumeHandler = function(urlParam){
       break;
     case "Puzzle":
       var puzzle = req.query.d;
-      //response = puzzleHandler(puzzle);
-      response = "hi"
+      response = puzzle;
       break;
   }
 
