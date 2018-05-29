@@ -97,7 +97,7 @@ router.get('/', function(req, res, next) {
       break;
     case "Puzzle":
       var puzzle = req.query.d;
-      response = puzzle.substring(puzzle.indexOf(':') + 1, puzzle.length);
+      response = puzzle.substring(puzzle.indexOf(':') + 1, puzzle.length).split("\n")[0];
       break;
   }
   res.send(response)
