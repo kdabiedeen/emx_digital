@@ -4,7 +4,8 @@ var router = express.Router();
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   var call_result = function(input){
-    var rows = input.split(" ");
+    var rows = input.split(/\r?\n/);
+    return rows[1];
     var indexOfEquals = -1;
 
     var A = ['-', '-', '-', '-'];
@@ -97,7 +98,8 @@ router.get('/', function(req, res, next) {
       break;
     case "Puzzle":
       var puzzle = req.query.d;
-      response = puzzle.substring(puzzle.indexOf(':') + 1, puzzle.length).split("\n")[0];
+      puzzle = puzzle.substring(puzzle.indexOf(':') + 1, puzzle.length);
+      response = call_result(puzzle);
       break;
   }
   res.send(response)
