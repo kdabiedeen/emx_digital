@@ -3,7 +3,11 @@ var puzzleHandler = require('./puzzleHandler')
 var resumeHandler = function(urlParam){
   var response;
 
-  return urlParam;
+  if(urlParam == "Ping")
+    return "OK"
+  else {
+    return urlParam;
+  }
   switch(urlParam){
     case "Ping":
       response = "OK";
