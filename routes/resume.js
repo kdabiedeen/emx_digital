@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   var call_result = function(input){
     var rows = input.split(/\r?\n/).slice(2);
-    return rows.join("**");
+    return rows.length;
     var indexOfEquals = -1;
 
     var A = ['-', '-', '-', '-'];
