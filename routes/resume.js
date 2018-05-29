@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
       rows[i] = rows[i].trim();
     }
 
-    return "what" + rows.length;
+    return rows.join("*9*");
 
     var indexOfEquals = -1;
     var A = ['-', '-', '-', '-'];
