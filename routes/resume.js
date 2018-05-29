@@ -5,12 +5,10 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   var call_result = function(input){
     try {
-    var rows = input.split(/\r?\n/);
+    var rows = input.split(/\r?\n/).slice(0,4);
     for(var i = 0; i < rows; i++){
       rows[i] = rows[i].trim();
     }
-
-    return rows.join("*9*");
 
     var indexOfEquals = -1;
     var A = ['-', '-', '-', '-'];
