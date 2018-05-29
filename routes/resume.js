@@ -15,6 +15,8 @@ router.get('/', function(req, res, next) {
     var C = ['-', '-', '-', '-'];
     var D = ['-', '-', '-', '-'];
 
+      return "Hello";
+      
     var answer = [A,B,C,D]
     var collectGivenChars = []
     for(var i = 0; i < rows.length; i++){
@@ -33,8 +35,6 @@ router.get('/', function(req, res, next) {
       if(current_string.indexOf("=") > -1)
         indexOfEquals = i;
     }
-
-    return "Hello";
 
     opposites = {}
     opposites['<'] = '>'
