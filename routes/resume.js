@@ -90,13 +90,13 @@ router.get('/', function(req, res, next) {
       response = "Yes"
       break;
     case "Resume":
-      response = "https://linkedin.com/in/kdabiedeen"
+      response = "https://drive.google.com/uc?export=download&id=0B9S6A62lL2pJVEp1ZEpnUkZ6TFozbl8ydFBBMktXVUJ0MVVr"
       break;
     case "Source":
       response = "https://github.com/kdabiedeen/emx_digital"
       break;
     case "Referrer":
-      response = "Jenny"
+      response = "Jenny Gasparis (LinkedIn) "
       break;
     case "Puzzle":
       var puzzle = req.query.d;
