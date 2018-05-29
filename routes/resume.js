@@ -3,6 +3,62 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
+  var call_result = function(input){
+    var rows = input.split(" ");
+    var indexOfEquals = -1;
+
+    var A = ['-', '-', '-', '-'];
+    var B = ['-', '-', '-', '-'];
+    var C = ['-', '-', '-', '-'];
+    var D = ['-', '-', '-', '-'];
+
+    var answer = [A,B,C,D]
+    var collectGivenChars = []
+    for(var i = 0; i < rows.length; i++){
+      var current_string = rows[i].substring(1, rows[i].length);
+
+      answer[i][i] = "=";
+
+      for(var j = 0; j < current_string.length; j++){
+        if(current_string[j] != '-')
+          collectGivenChars.push({
+            c: current_string[j],
+            i: j
+          });
+      }
+
+      if(current_string.indexOf("=") > -1)
+        indexOfEquals = i;
+    }
+
+    opposites = {}
+    opposites['<'] = '>'
+    opposites['>'] = '<'
+    opposites['='] = '='
+
+    var givenRow = []
+    for(var givenChars of collectGivenChars)
+        givenRow.push(opposites[givenChars.c])
+
+    answer[indexOfEquals] = givenRow;
+
+    var result = " ABCD\n"
+    for(var i = 0; i < answer.length; i++){
+      if(i != indexOfEquals){
+        var dummyRow = givenRow.slice(0);
+        var swapChar = opposites[dummyRow[i]];
+        dummyRow[i] = "="
+        dummyRow[indexOfEquals] = swapChar;
+
+        dummyRow[collectGivenChars[i].i] = collectGivenChars[i].c
+        answer[i] = dummyRow;
+      }
+      result += rows[i][0] + (answer[i].join("")) + "\n";
+    }
+
+    return result;
+  }
+
   var url_param = req.query.q;
   var response;
   switch(url_param){
@@ -40,7 +96,7 @@ router.get('/', function(req, res, next) {
       response = "Jenny"
       break;
     case "Puzzle":
-      response = " ABCD\nA=>>>\nB<=<<\nC<>=>\nD<><="
+      response = "D " + req.query.d;
       break;
   }
   res.send(response)
