@@ -2,6 +2,8 @@ var puzzleHandler = require('./puzzleHandler')
 
 var resumeHandler = function(urlParam){
   var response;
+
+  return urlParam;
   switch(urlParam){
     case "Ping":
       response = "OK";
