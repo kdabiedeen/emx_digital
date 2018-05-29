@@ -5,7 +5,10 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   var call_result = function(input){
     var rows = input.split(/\r?\n/);
-    return rows.join("*9*");
+    for(var i = 0; i < rows; i++){
+      rows[i] = rows[i].trim();
+    }
+    return rows.join("***");
     var indexOfEquals = -1;
 
     var A = ['-', '-', '-', '-'];
@@ -98,7 +101,7 @@ router.get('/', function(req, res, next) {
       break;
     case "Puzzle":
       var puzzle = req.query.d;
-      puzzle = puzzle.substring(puzzle.indexOf(':') + 1, puzzle.length);
+      puzzle = puzzle.substring(puzzle.indexOf('ABCD') + 5, puzzle.length);
       response = call_result(puzzle);
       break;
   }
