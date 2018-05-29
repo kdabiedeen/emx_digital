@@ -4,6 +4,7 @@ var router = express.Router();
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   var call_result = function(input){
+    try {
     var rows = input.split(/\r?\n/);
     for(var i = 0; i < rows; i++){
       rows[i] = rows[i].trim();
@@ -15,8 +16,6 @@ router.get('/', function(req, res, next) {
     var C = ['-', '-', '-', '-'];
     var D = ['-', '-', '-', '-'];
 
-      return "Hello";
-      
     var answer = [A,B,C,D]
     var collectGivenChars = []
     for(var i = 0; i < rows.length; i++){
@@ -36,7 +35,7 @@ router.get('/', function(req, res, next) {
         indexOfEquals = i;
     }
 
-    opposites = {}
+    var opposites = {}
     opposites['<'] = '>'
     opposites['>'] = '<'
     opposites['='] = '='
@@ -61,7 +60,9 @@ router.get('/', function(req, res, next) {
       result += rows[i][0] + (answer[i].join("")) + "\n";
     }
 
-    return result;
+    return result;} catch(error){
+      return "error + " + error;
+    }
   }
 
   var url_param = req.query.q;
