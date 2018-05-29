@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
     var result = resumeHandler(urlParams);
     res.send(result)
   } catch(error){
-    res.send(error.stack());
+    res.send("Error " + error);
   }
 });
 
