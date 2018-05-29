@@ -10,6 +10,8 @@ router.get('/', function(req, res, next) {
       rows[i] = rows[i].trim();
     }
 
+    return "what" + rows.length;
+
     var indexOfEquals = -1;
     var A = ['-', '-', '-', '-'];
     var B = ['-', '-', '-', '-'];
