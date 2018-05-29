@@ -1,9 +1,10 @@
 var puzzleHandler = require('./puzzleHandler')
 
-var resumeHandler = function(urlParam){
+var resumeHandler = function(urlParams){
   var response;
+  var q = urlParams.q
 
-  switch(urlParam){
+  switch(q){
     case "Ping":
       response = "OK";
       break;
@@ -38,8 +39,8 @@ var resumeHandler = function(urlParam){
       response = "Jenny Gasparis (LinkedIn) "
       break;
     case "Puzzle":
-      var puzzle = req.query.d;
-      response = puzzle;
+      var puzzle = urlParams.d
+      response = puzzleHandler(puzzle);
       break;
   }
 
